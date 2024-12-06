@@ -57,6 +57,7 @@ function addTask() {
   list.style.height = "33px";
   list.style.maxWidth = "70%";
   list.style.marginTop = "10px";
+  list.style.marginLeft = "40px";
   list.classList.add("tache");
   list.innerText = `${taskInput.value.trim()}`;
 
@@ -162,6 +163,7 @@ function initializePageEvents(page) {
       list.style.height = "33px";
       list.style.maxWidth = "70%";
       list.style.marginTop = "10px";
+      list.style.marginLeft = "40px";
       list.classList.add("tache");
       list.innerText = taskValue;
 

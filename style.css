@@ -10,25 +10,68 @@ body {
 
 main,
 .book {
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  height: 860px; 
+  /* flex-direction: column;  */
+  display: flex;
+  /* align-items: center; 
+  justify-content: center; */
+  min-height: 100vh; 
   width: 100%;
-
 } 
 
-.page{
+.task_list_accueil{
+  /* display: flex; */
+  max-width: 100%;
+  margin-left: 30px;
+  justify-content: left;
+}
+
+.task_list_accueil h1{
+  padding-bottom: 15px;
+}
+
+.array_task_list_accueil{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  max-width: 100%;
+}
+
+.array_task_list_accueil button{
+  border-radius: 50px;
+  width: 250px;
+  align-items: center;
+  text-align: center;
+  text-align: left;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+
+.shopping_list_accueil button,
+.work_list_accueil button,
+.household_chore_accueil button{
   display: flex;
-  position: relative;
-  margin-top: 40px;
+
+}
+
+.shopping_list_accueil button img,
+.work_list_accueil button img,
+.household_chore_accueil button img{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
-.to_do_list,
-.div_paper,
-.div_work{
-  position: absolute;
+
+
+
+
+
+
+
+.page{
+  display: flex;
+  margin-top: 40px;
+  overflow: auto;
 }
 
 .page,
@@ -41,23 +84,20 @@ main,
 
 .to_do_list{
   width: 100%;
-  max-width: 95%; 
   box-sizing: border-box; 
   justify-content: center;
   align-items: center; 
   justify-content: center;
   text-align: center; 
-  height: 50vh;
-  margin-top: auto;
+  height: auto;
 }
 
 
 .div_paper  {
   display: flex;
   flex-direction: column;
-  width: 100%; 
-  max-width: 95%;
-  height: 90vh;
+  width: 95%;
+  min-height: 90vh;
   border-radius: 50px;
   background-color: lightgray;
   align-items: center;
@@ -65,7 +105,6 @@ main,
 
 
 .div_work img{
-  display: block;
   max-width: 100%;
   height: auto;
   border-top-left-radius: 50px;
@@ -130,4 +169,6 @@ li.completed{
 #taskCount_true {
   bottom: 0;
 }
+
+
 
