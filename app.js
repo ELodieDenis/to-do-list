@@ -244,7 +244,7 @@ function initializePageNavigation() {
 
     if (!newPage) {
       const newPage = document.createElement("div");
-      newPage.classList.add("current_page");
+      newPage.classList.add("page", "current_page");
       newPage.id = `Page_${currentPageIndex + 1}`;
       newPage.innerHTML = currentPageOriginal.innerHTML;
       book.appendChild(newPage);

@@ -1,7 +1,7 @@
-/* *{
+*{
   margin: 0;
   padding: 0;
-} */
+}
 
 body {
   font-family: Arial, sans-serif;
@@ -24,32 +24,33 @@ main,
   margin-top: 40px;
 }
 
+
+.to_do_list,
 .div_paper,
-.to_do_list{
+.div_work{
   position: absolute;
 }
 
-.page{
+.page,
+.current_page{
   width: 100%;
   height: 860px;
   box-sizing: border-box; 
   justify-content: center;
 }
 
-.to_do_list, .current_page {
+.to_do_list{
   width: 100%;
   max-width: 95%; 
   box-sizing: border-box; 
   justify-content: center;
-  align-items: end;
-}
-
-.to_do_list {
   align-items: center; 
   justify-content: center;
   text-align: center; 
   height: 50vh;
+  margin-top: auto;
 }
+
 
 .div_paper  {
   display: flex;
@@ -60,7 +61,6 @@ main,
   border-radius: 50px;
   background-color: lightgray;
   align-items: center;
-  gap: 20px;
 }
 
 
@@ -131,91 +131,3 @@ li.completed{
   bottom: 0;
 }
 
-
-
-
-
-
-/* main:nth-child(2),
-.book:nth-child(2) {
-  display: flex;
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center;
-  height: 100vh; 
-
-} 
-
-.div_paper:nth-child(2),
-.to_do_list:nth-child(2),
-.page:nth-child(2),
-.nouvelle_page:nth-child(2){
-  position: absolute;
-}
-
-
-.to_do_list:nth-child(2), .div_paper:nth-child(2), .page:nth-child(2), .nouvelle_page:nth-child(2) {
-  width: 90%;
-  max-width: 900px; 
-  height: 90vh;
-  box-sizing: border-box; 
-}
-
-.to_do_list:nth-child(2) {
-  position: relative;
-  align-items: center; 
-  justify-content: center;
-  text-align: center; 
-}
-
-.div_paper:nth-child(2) img {
-  width: 100%; 
-  height: 100%;
-  object-fit: cover; 
-  border-top-right-radius: 3%;
-  border-bottom-right-radius: 3%;
-}
-
-
-h1:nth-child(2) {
-  display: flex;
-  justify-content: center;
-}
-
-
-ul:nth-child(2){
-  position: 10px relative;
-}
-
-li.completed:nth-child(2){
-  text-decoration: line-through;
-  color: grey;
-}
-
-.chevrons:nth-child(2){
-  display: flex;
-  justify-content: space-between;
-}
-
-.chevron_left:nth-child(2) img,
-.chevron_right:nth-child(2) img{
-  width: 35px;
-  height: auto;
-}
-
-.chevron_left:nth-child(2) img:hover,
-.chevron_right:nth-child(2) img:hover{
-  transform: scale(1.5);
-  cursor: pointer;
-}
-
-
-.poubelle:nth-child(2):hover{
-  cursor: pointer;
-  content: url(/pictures/trask\ hover.png);
-}
-
-#taskCount:nth-child(2),
-#taskCount_true:nth-child(2) {
-  bottom: 0;
-} */
