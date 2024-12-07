@@ -18,11 +18,42 @@ main,
   width: 100%;
 } 
 
+.page{
+  display: flex;
+  margin-top: 40px;
+  overflow: auto;
+}
+
+.page,
+.current_page{
+  width: 100%;
+  height: 860px;
+  box-sizing: border-box; 
+  justify-content: center;
+}
+
+.div_paper  {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  min-height: 90vh;
+  border-radius: 50px;
+  background-color: lightgray;
+  align-items: center;
+}
+
+.div_work img{
+  max-width: 100%;
+  height: auto;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px; 
+}
+
 .task_list_accueil{
-  /* display: flex; */
   max-width: 100%;
   margin-left: 30px;
   justify-content: left;
+  margin-top: 20px;
 }
 
 .task_list_accueil h1{
@@ -39,18 +70,30 @@ main,
 .array_task_list_accueil button{
   border-radius: 50px;
   width: 250px;
+  height: 35px;
   align-items: center;
   text-align: center;
-  text-align: left;
   margin-left: 50px;
   margin-top: 15px;
 }
 
+.array_task_list_accueil input{
+  border: none;
+  outline: none;
+  height: 25px;
+  width: 150px;
+}
+
+.array_task_list_accueil input:not(:placeholder-shown){
+  font-weight: bold;
+  font-size: 17px;
+}
+
 .shopping_list_accueil button,
 .work_list_accueil button,
-.household_chore_accueil button{
+.household_chore_accueil button,
+.other_button button{
   display: flex;
-
 }
 
 .shopping_list_accueil button img,
@@ -60,115 +103,42 @@ main,
   padding-right: 10px;
 }
 
-
-
-
-
-
-
-
-
-.page{
-  display: flex;
-  margin-top: 40px;
-  overflow: auto;
+.other_button button{
+  padding-left: 7px;
 }
 
-.page,
-.current_page{
-  width: 100%;
-  height: 860px;
-  box-sizing: border-box; 
-  justify-content: center;
-}
-
-.to_do_list{
-  width: 100%;
-  box-sizing: border-box; 
-  justify-content: center;
-  align-items: center; 
-  justify-content: center;
-  text-align: center; 
-  height: auto;
-}
-
-
-.div_paper  {
-  display: flex;
-  flex-direction: column;
-  width: 95%;
-  min-height: 90vh;
-  border-radius: 50px;
-  background-color: lightgray;
-  align-items: center;
-}
-
-
-.div_work img{
-  max-width: 100%;
-  height: auto;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px; 
-}
-
-.name_list{
-  display: flex;
-  justify-content: space-between;
-  margin: 0px 35px 0px 35px;
-}
-
-.name_list input{
-  text-transform: uppercase;
-  font-weight: 800;
-  background-color: transparent;
+.other_button button select{
+  height: 25px;
   border: none;
+  outline: none;
 }
 
-h1 {
-  display: inline-block;
+#choice_icon{
+  font-size: 24px;
 }
 
-h5 {
-  display: inline-block;
-  font-weight: normal;
+.other_button input{
+  font-family: Arial, sans-serif;
 }
 
-ul{
-  position: relative;
+.new_other_button{
+  text-align: center;
 }
 
-li.completed{
-  text-decoration: line-through;
-  color: grey;
+.new_other_button button{
+  border-radius: 50px;
+  width: 250px;
+  height: 35px;
+  align-items: center;
+  text-align: center;
+  margin-left: 50px;
+  margin-top: 15px;
 }
 
-.chevrons{
-  display: flex;
-  justify-content: space-between;
+.new_other_button button:hover{
+  border: 3px solid black;
 }
 
-.chevron_left img,
-.chevron_right img{
-  width: 35px;
-  height: auto;
+.new_other_button button h3:hover{
+  font-size: 30px;
 }
-
-.chevron_left img:hover,
-.chevron_right img:hover{
-  transform: scale(1.5);
-  cursor: pointer;
-}
-
-
-.poubelle:hover{
-  cursor: pointer;
-  content: url(/pictures/trask\ hover.png);
-}
-
-#taskCount,
-#taskCount_true {
-  bottom: 0;
-}
-
-
-
