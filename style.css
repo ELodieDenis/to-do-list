@@ -60,14 +60,14 @@ main,
   padding-bottom: 15px;
 }
 
-.array_task_list_accueil{
+.task_list_container{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   max-width: 100%;
 }
 
-.array_task_list_accueil button{
+.task_list_container button{
   border-radius: 50px;
   width: 250px;
   height: 35px;
@@ -77,14 +77,14 @@ main,
   margin-top: 15px;
 }
 
-.array_task_list_accueil input{
+.task_list_container input{
   border: none;
   outline: none;
   height: 25px;
   width: 150px;
 }
 
-.array_task_list_accueil input:not(:placeholder-shown){
+.task_list_container input:not(:placeholder-shown){
   font-weight: bold;
   font-size: 17px;
 }
@@ -125,7 +125,8 @@ main,
   text-align: center;
 }
 
-.new_other_button button{
+.new_other_button button,
+.add_button button{
   border-radius: 50px;
   width: 250px;
   height: 35px;
@@ -135,10 +136,4 @@ main,
   margin-top: 15px;
 }
 
-.new_other_button button:hover{
-  border: 3px solid black;
-}
 
-.new_other_button button h3:hover{
-  font-size: 30px;
-}

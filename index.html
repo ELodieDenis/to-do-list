@@ -16,13 +16,32 @@
                         <img src="/pictures/work1.png" alt="Personne travaillant sur son ordinateur">
                     </div>
                     <div class="task_list_accueil">
-                        <h1>Task List</h1>
+                        <h1>Task List</h1>                       
                         <div class="new_other_button">
                             <button>
-                                <h3> + </h3>
+                                    <select name="choice_icon" id="choice_icon">
+                                        <option value="shopping" id="choice_icon_shopping">🛒</option>
+                                        <option value="work" id="choice_icon_work">💼</option>
+                                        <option value="house" id="choise_icon_house">🏠</option>
+                                    </select>                   
+
+                                    <label for="name_list" class="name_list">
+                                        <input type="text" placeholder="Nom de la liste...">
+                                    </label>
+                                    
+                                    <div class="add_button">
+                                        <h3>+</h3>
+                                    </div>
                             </button>
                         </div>
-                        <div class="array_task_list_accueil">
+
+                        <!-- <div class="add_button">
+                            <button id="add_button">
+                                <h3> + </h3>
+                            </button>
+                        </div> -->
+
+                        <div class="task_list_container">
                         </div>
                     </div>
                 </div>
