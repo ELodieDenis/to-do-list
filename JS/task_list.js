@@ -38,6 +38,14 @@ const currentPage = document.querySelector(".page");
 let currentPageOriginal = currentPage.cloneNode(true);
 
 // -------------------------------------------------------------------------------------------------------------
+// Fonction pour ajouter le nom de la liste inscrite dans la page d'accueil sur la page task list
+const valeur = localStorage.getItem("nametrue");
+
+if (valeur) {
+  console.log("Données reçu :", valeur);
+}
+
+// -------------------------------------------------------------------------------------------------------------
 // Fonction pour incrémenter et décrémenter le nombre de tâches de checkbox.checked
 function incrementCheckbox() {
   const checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -290,12 +298,22 @@ function initializePageNavigation() {
       newPage.style.display = "flex";
       previousPage.style.display = "none";
     }
-
-    // currentPageIndex++;
-
-    // let currentPage = document.querySelector(".page");
-
-    // currentPage = newPage;
-    // currentPageIndex++;
   });
 }
+
+// Fonction pour retourner à la page d'accueil lorsqu'on clic que le bouton de retour
+function backHome() {
+  document.addEventListener("DOMContentLoaded", () => {
+    const backHomePage = document.querySelector(".back_home_page img");
+
+    backHomePage.addEventListener("click", () => {
+      if (backHomePage) {
+        window.location.href = `/index.html`;
+      } else {
+        alert("page non trouvée");
+      }
+    });
+  });
+}
+
+backHome();
