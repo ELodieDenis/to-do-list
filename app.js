@@ -25,14 +25,16 @@ function addTaskToDOM(icon, name) {
       ${icon}
       <span>${name}</span>
     </button>
+    <img class="trask_icon_button trask_icon_button_${index}"src="/pictures/trask.png" alt="">               
   `;
+
   taskListContainer.appendChild(newTaskList);
 
   index++;
 }
 
 // Ajouter un bouton au clic sur add_button
-addButton.addEventListener("click", () => {
+addButton.addEventListener("click", (event) => {
   const icon =
     choiceIcon.value === "shopping"
       ? "🛒"
@@ -43,15 +45,28 @@ addButton.addEventListener("click", () => {
   const name = nameInput.value.trim();
   let arrayNameButton = [];
 
+  const LocalStorageNomBoutons = JSON.parse(localStorage.getItem("nomBoutons"));
+  // const userLocalStorageNomBoutons = LocalStorageNomBoutons[index];
+
   if (!name) {
     alert("Veuillez entrer un nom de liste valide !");
     return;
   } else {
     const nameButtons = JSON.parse(localStorage.getItem("nomBoutons")) || [];
-    nameButtons.push(name);
-    localStorage.setItem("nomBoutons", JSON.stringify(nameButtons));
 
-    console.log(`Valeur enregistrée : ${name}`);
+    if (nameButtons.includes(name)) {
+      // console.log(nameButtons);
+      event.preventDefault();
+      alert("Cette liste existe déjà");
+      nameInput.value = "";
+      return;
+    } else {
+      nameButtons.push(name);
+      localStorage.setItem("nomBoutons", JSON.stringify(nameButtons));
+
+      console.log(`Valeur enregistrée : ${name}`);
+      // console.log(traskIconButton);
+    }
   }
 
   const newButton = { icon, name };
@@ -80,15 +95,67 @@ loadButtons();
 // });
 
 // -------------------------------------------------------------------------------------------------------------
-
-// Supprimer toute la liste des tâches avec le bouton clear button
+// Supprimer TOUTE LA LISTEdes tâches avec le bouton clear button
 const clearButton = document.querySelector(".clear_button img");
 
-clearButton.addEventListener("click", () => {
+clearButton.addEventListener("click", (event) => {
+  const userReponse = confirm(
+    "Voulez-vous vraiment supprimer toutes les listes ?"
+  );
+
+  if (!userReponse) {
+    event.preventDefault();
+    return;
+  }
+
   localStorage.clear("taskButtons");
   taskListContainer.innerHTML = "";
 });
 
+// -----------------------------------------------------------------------------------
+// Supprimer un bouton élément de tâche avec le bouton clear button
+const traskIconButton = document.querySelectorAll(".trask_icon_button");
+
+traskIconButton.forEach((button, index) => {
+  button.addEventListener("click", (event) => {
+    const LocalStorageNomBoutons = JSON.parse(
+      localStorage.getItem("taskButtons")
+    );
+
+    const taskListContainer = document.querySelector(".task_list_container");
+    console.log(taskListContainer);
+
+    if (LocalStorageNomBoutons) {
+      // Alerte pour signaler que la liste va être supprimée
+      const userReponse1 = confirm("Cette liste va être supprimée");
+
+      if (!userReponse1) {
+        event.preventDefault();
+        return;
+      }
+
+      console.log("Données actuelles : ", LocalStorageNomBoutons);
+
+      if (LocalStorageNomBoutons[index]) {
+        LocalStorageNomBoutons.splice(index, 1);
+
+        localStorage.setItem(
+          "taskButtons",
+          JSON.stringify(LocalStorageNomBoutons)
+        );
+        console.log(`Élément supprimé à l'index ${index}`);
+      } else {
+        console.log("Aucun élément trouvé à cet index");
+      }
+    } else {
+      console.log("Le localStorage ne contient pas de données");
+    }
+
+    event.target.closest(".numberTask").remove();
+  });
+});
+
+// -----------------------------------------------------------------------------------
 // Lier chaque bouton à une page taskList
 document.addEventListener("DOMContentLoaded", () => {
   const numberTask = document.querySelectorAll(".numberTask");

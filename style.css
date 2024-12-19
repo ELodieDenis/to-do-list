@@ -91,6 +91,30 @@ main,
   font-size: 17px;
 }
 
+.numberTask{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.trask_icon_button{
+  width: 25px;
+  height: auto;
+  margin-top: 15px;
+}
+
+.trask_icon_button img{
+  width: 25px;
+  height: auto;
+  padding-top: 5px;
+}
+
+.trask_icon_button:hover{
+  content: url(/pictures/trask\ hover.png);
+  cursor: pointer;
+}
+
 .container_new_other_button {
   display: flex;
   justify-content: center;
